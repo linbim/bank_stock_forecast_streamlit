@@ -10,4 +10,3 @@ datetime
 seaborn
 functools
 statsmodels
-itertools
