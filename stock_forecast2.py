@@ -32,30 +32,31 @@ def load_stock_data(symbol):
 # Function to load and preprocess economic data
 def load_and_preprocess_economic_data():
     # Load CPI data
-    CPI_data = pd.read_csv('C:/Users/linda/Desktop/CPI_data.csv')
+    CPI_data = pd.read_csv('CPI_data.csv')
     CPI_data['date'] = pd.to_datetime(CPI_data['date']) + pd.offsets.MonthEnd(0)
     CPI_data.rename(columns={'value': 'cpi_value'}, inplace=True)
 
     # Load unemployment data
-    unemployment_data = pd.read_csv('C:/Users/linda/Desktop/unemployment_data.csv')
+    # unemployment_data = pd.read_csv('Dataset CSV/unemployment_data.csv')
+    unemployment_data = pd.read_csv('unemployment_data.csv')
     unemployment_data['value'] = pd.to_numeric(unemployment_data['value'])
     unemployment_data['date'] = pd.to_datetime(unemployment_data['date']) + pd.offsets.MonthEnd(0)
     unemployment_data.rename(columns={'value': 'unemployment'}, inplace=True)
 
     # Load retail data
-    retail_data = pd.read_csv('C:/Users/linda/Desktop/retail_data.csv')
+    retail_data = pd.read_csv('retail_data.csv')
     retail_data['value'] = pd.to_numeric(retail_data['value'])
     retail_data['date'] = pd.to_datetime(retail_data['date']) + pd.offsets.MonthEnd(0)
     retail_data.rename(columns={'value': 'Retail'}, inplace=True)
 
     # Load federal fund (interest) rate data
-    interest_data = pd.read_csv('C:/Users/linda/Desktop/Interest_data.csv')
+    interest_data = pd.read_csv('Interest_data.csv')
     interest_data['value'] = pd.to_numeric(interest_data['value'])
     interest_data['date'] = pd.to_datetime(interest_data['date']) + pd.offsets.MonthEnd(0)
     interest_data.rename(columns={'value': 'Interest'}, inplace=True)
 
     # Load GDP data
-    gdp_data = pd.read_csv('C:/Users/linda/Desktop/gdp_data.csv')
+    gdp_data = pd.read_csv('gdp_data.csv')
     gdp_data['value'] = pd.to_numeric(gdp_data['value'], errors='coerce')
     gdp_data['date'] = pd.to_datetime(gdp_data['date'], errors='coerce') + pd.offsets.MonthEnd(0)
     gdp_data.rename(columns={'value': 'GDP'}, inplace=True)
@@ -66,21 +67,21 @@ def load_and_preprocess_economic_data():
     r_gdp['GDP'] = r_gdp['GDP'].round(2)
 
     # Load treasury yield data
-    yield_data = pd.read_csv('C:/Users/linda/Desktop/yield_data.csv')
+    yield_data = pd.read_csv('yield_data.csv')
     yield_data['value'] = pd.to_numeric(yield_data['value'], errors='coerce')
     yield_data['date'] = pd.to_datetime(yield_data['date'], errors='coerce') + pd.offsets.MonthEnd(0)
     yield_data.rename(columns={'value': 'treasure_yield'}, inplace=True)
     yield_data=yield_data.drop (columns=['Unnamed: 0'])
 
     # Load durables data
-    durables_data = pd.read_csv('C:/Users/linda/Desktop/durables_data.csv')
+    durables_data = pd.read_csv('durables_data.csv')
     durables_data['value'] = pd.to_numeric(durables_data['value'], errors='coerce')
     durables_data['date'] = pd.to_datetime(durables_data['date'], errors='coerce') + pd.offsets.MonthEnd(0)
     durables_data.rename(columns={'value': 'durables'}, inplace=True)
     durables_data=durables_data.drop(columns=['Unnamed: 0'])
 
     # Load payroll data
-    payroll_data = pd.read_csv('C:/Users/linda/Desktop/payroll_data.csv')
+    payroll_data = pd.read_csv('payroll_data.csv')
     payroll_data['value'] = pd.to_numeric(payroll_data['value'], errors='coerce')
     payroll_data['date'] = pd.to_datetime(payroll_data['date'], errors='coerce') + pd.offsets.MonthEnd(0)
     payroll_data.rename(columns={'value': 'payroll'}, inplace=True)
