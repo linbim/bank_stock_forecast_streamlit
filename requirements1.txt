@@ -1,0 +1,13 @@
+pandas 
+streamlit
+matplotlib
+numpy
+scikit-learn
+prophet
+plotly
+scipy
+datetime
+seaborn
+functools
+statsmodels.api
+itertools
