@@ -9,5 +9,5 @@ scipy
 datetime
 seaborn
 functools
-statsmodels.api
+statsmodels
 itertools
